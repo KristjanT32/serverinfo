@@ -1,0 +1,51 @@
+name: ServerInfo
+version: '${project.version}'
+main: com.krisapps.serverinfo.ServerInfo
+api-version: 1.18
+prefix: ServerInfo
+authors: [ _TheTechGuy_ ]
+description: A useful plugin to view information about your server in a more comfortable way!
+
+commands:
+  players:
+    description: "Display server's player info."
+    usage: "/players"
+    permission: serverinfo.common
+  playerinfo:
+    description: "Get information for the specified player."
+    usage: "/playerinfo <player>"
+    permission: serverinfo.advanced
+  serverinfo:
+    description: "Get general server information."
+    usage: "/serverinfo"
+    permission: serverinfo.admin
+  baninfo:
+    description: "Retrieve the list of banned players on this server."
+    usage: "/baninfo"
+    permission: serverinfo.advanced
+  getbans:
+    description: "Get ban record history for the specified player."
+    usage: "/getbans <player>"
+    permission: serverinfo.advanced
+  showbanentry:
+    description: "Shows a certain ban entry from the ban history of the specified player."
+    usage: "/showbanentry <playerUUID/playerName> <banEntryID>"
+    permission: serverinfo.advanced
+  purgehistory:
+    description: "Purges the specified player's ban history."
+    usage: "/purgehistory <player> [id]"
+    permission: serverinfo.advanced
+
+permissions:
+  serverinfo.admin:
+    description: "Provides you access to all of the commands of this plugin."
+    children:
+      - serverinfo.common
+      - serverinfo.advanced
+    default: op
+
+  serverinfo.common:
+    description: "Provides the core functionality of the plugin."
+    default: not op
+  serverinfo.advanced:
+    description: "Advanced commands for advanced users."

@@ -1,0 +1,13 @@
+#Configuration file for ServerInfo ${project.version}
+
+config:
+  #Should an announcement be broadcast when a player is kicked?
+  announceKick: true
+  kickMessage: "&e=========================================\n&b&l%player% &ewas kicked from this server.\n&bReason: &a%reason%\n&e========================================="
+
+  #Should an announcement be broadcast when a player is banned?
+  announceBan: true
+  banMessage: "&e=========================================\n&b&l%player% &ewas banned from this server.\n&bReason: &a%reason%\n&e========================================="
+
+  #Should HistoryManager log the deletion of ban history?
+  logHistoryDeletion: true
